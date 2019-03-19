@@ -20,7 +20,7 @@
                     <tr>
                         <td>{{++$key}}</td>
                         <td>{{$value->title}}</td>
-                        <td>{{htmlspecialchars_decode($value->description)}}</td>
+                        <td>{!! $value->description !!}</td>
                         <td><img src="{{url('images/News/'.$value->image)}}" width="30px"></td>
                         <td>{{$value->created_at}}</td>
                         <td>

@@ -9,6 +9,9 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function () {
     Route::any('add-horo', 'AdminController@add_horo')->name('add-horo');
     Route::any('save-horo', 'AdminController@save_horo')->name('save-horo');
     Route::any('show-horo', 'AdminController@show_horo')->name('show-horo');
+    Route::any('delete-horo/{id?}', 'AdminController@delete_horo')->name('delete-horo');
+    Route::any('edit-horo/{id?}', 'AdminController@edit_horo')->name('edit-horo');
+    Route::any('edit-horo-action','AdminController@edit_horo_action')->name('edit-horo-action');
 
     Route::group(['prefix' => 'News'], function () {
         Route::any('add-news', 'AdminController@add_news')->name('add-news');

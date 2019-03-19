@@ -1,10 +1,10 @@
 @extends('master.master')
 @section('content')
-
     <div class="right_col" role="main">
         <div class="">
             <div class="row">
                 <div class="col-md-12">
+                    <a class="btn btn-danger" href="{{route('show-horo')}}"><i class="fa fa-backward"></i>Back</a>
                     @if(session('error'))
                         <div class="alert alert-danger">
                             {{session('error')}}
@@ -36,11 +36,12 @@
 
                                         <div class="x_content">
                                             <br/>
-                                            <h1>Please Enter your horoscope Description</h1>
+                                            <h1>Update your horoscope Description</h1>
                                             <form id="demo-form2" data-parsley-validate
                                                   class="form-horizontal form-label-left" method="post"
-                                                  action="{{route('save-horo')}}" enctype="multipart/form-data">
+                                                  action="{{route('edit-horo-action')}}" enctype="multipart/form-data">
                                                 @csrf
+                                                <input type="hidden" name="id" value="{{$horo->id}}">
 
                                                 <div class="form-group">
 
@@ -52,12 +53,11 @@
                                                             <select class="custom-select" name="title"
                                                                     id="inputGroupSelect02">
 
-                                                                <option value="0" selected disabled>Please select
+                                                                <option value="" selected disabled>Please select
                                                                     horoscope to add
                                                                 </option>
                                                                 <option value="Aries
-                                                                    (Mar 21-Apr 19)">Aries
-                                                                    (Mar 21-Apr 19)
+                                                                    (Mar 21-Apr 19)">
                                                                 </option>
                                                                 <option value="Taurus
                                                                     (Apr 20-May 20)">Taurus
@@ -120,12 +120,14 @@
                                                                type="file" name="image">
                                                     </div>
                                                 </div>
+
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3 col-sm-3 col-xs-12"
                                                            for="description">Description
                                                     </label>
                                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                                         <textarea id="description" name="description"
+                                                                  value=""
                                                                   class="form-control"></textarea>
                                                     </div>
                                                 </div>
@@ -137,8 +139,9 @@
                                                         <button class="btn btn-primary" type="button">Cancel</button>
                                                         <button class="btn btn-primary" type="reset">Reset</button>
                                                         <button type="submit" name="submit" class="btn btn-success">
-                                                            Submit
+                                                            Update
                                                         </button>
+
                                                     </div>
                                                 </div>
 

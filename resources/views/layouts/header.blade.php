@@ -109,12 +109,13 @@
                     <h6 class="collapse-header">Create News Feeds</h6>
                     <a class="collapse-item" href="{{route('add-news')}}">Add News</a>
                     <a class="collapse-item" href="{{route('show-news')}}">Manage News</a>
+                    <a class="collapse-item" href="{{route('add-slides')}}">News and updates</a>
 
                 </div>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed " data-toggle="collapse" data-target="#collapse" href="charts.html"
+            <a class="nav-link collapsed " data-toggle="collapse" data-target="#collapse" href="#"
                aria-controls="collapse">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Slides</span></a>
@@ -122,7 +123,7 @@
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Create News Slides</h6>
-                    <a class="collapse-item" href="{{route('add-slides')}}">Add Slides</a>
+
                     <a class="collapse-item" href="">Add Slides notes</a>
 
                 </div>
